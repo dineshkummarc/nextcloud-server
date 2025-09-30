@@ -110,6 +110,7 @@ class ComposerStaticInitFiles
         'OCA\\Files\\Service\\ViewConfig' => __DIR__ . '/..' . '/../lib/Service/ViewConfig.php',
         'OCA\\Files\\Settings\\AdminSettings' => __DIR__ . '/..' . '/../lib/Settings/AdminSettings.php',
         'OCA\\Files\\Settings\\PersonalSettings' => __DIR__ . '/..' . '/../lib/Settings/PersonalSettings.php',
+        'OCA\\Files\\Sharing\\NodeShareSourceType' => __DIR__ . '/..' . '/../lib/Sharing/NodeShareSourceType.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

@@ -74,8 +74,8 @@ interface IUserManager {
 	/**
 	 * Get the display name of a user
 	 *
-	 * @param string $uid
-	 * @return string|null
+	 * @param non-empty-string $uid
+	 * @return non-empty-string|null
 	 * @since 25.0.0
 	 */
 	public function getDisplayName(string $uid): ?string;

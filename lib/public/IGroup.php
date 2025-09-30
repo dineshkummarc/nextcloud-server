@@ -15,7 +15,7 @@ namespace OCP;
  */
 interface IGroup {
 	/**
-	 * @return string
+	 * @return non-empty-string
 	 * @since 8.0.0
 	 */
 	public function getGID(): string;

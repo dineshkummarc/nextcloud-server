@@ -11,32 +11,32 @@ class ComposerStaticInit749170dad3f5e7f9ca158f5a9f04f6a2
     );
 
     public static $prefixLengthsPsr4 = array (
-        'O' =>
+        'O' => 
         array (
             'OC\\Core\\' => 8,
             'OC\\' => 3,
             'OCP\\' => 4,
         ),
-        'N' =>
+        'N' => 
         array (
             'NCU\\' => 4,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'OC\\Core\\' =>
+        'OC\\Core\\' => 
         array (
             0 => __DIR__ . '/../../..' . '/core',
         ),
-        'OC\\' =>
+        'OC\\' => 
         array (
             0 => __DIR__ . '/../../..' . '/lib/private',
         ),
-        'OCP\\' =>
+        'OCP\\' => 
         array (
             0 => __DIR__ . '/../../..' . '/lib/public',
         ),
-        'NCU\\' =>
+        'NCU\\' => 
         array (
             0 => __DIR__ . '/../../..' . '/lib/unstable',
         ),
@@ -1640,6 +1640,13 @@ class ComposerStaticInit749170dad3f5e7f9ca158f5a9f04f6a2
         'OC\\Core\\ResponseDefinitions' => __DIR__ . '/../../..' . '/core/ResponseDefinitions.php',
         'OC\\Core\\Service\\CronService' => __DIR__ . '/../../..' . '/core/Service/CronService.php',
         'OC\\Core\\Service\\LoginFlowV2Service' => __DIR__ . '/../../..' . '/core/Service/LoginFlowV2Service.php',
+        'OC\\Core\\Sharing\\ExpirationShareFeature' => __DIR__ . '/../../..' . '/core/Sharing/ExpirationShareFeature.php',
+        'OC\\Core\\Sharing\\GroupShareRecipientType' => __DIR__ . '/../../..' . '/core/Sharing/GroupShareRecipientType.php',
+        'OC\\Core\\Sharing\\LabelShareFeature' => __DIR__ . '/../../..' . '/core/Sharing/LabelShareFeature.php',
+        'OC\\Core\\Sharing\\NoteShareFeature' => __DIR__ . '/../../..' . '/core/Sharing/NoteShareFeature.php',
+        'OC\\Core\\Sharing\\PasswordShareFeature' => __DIR__ . '/../../..' . '/core/Sharing/PasswordShareFeature.php',
+        'OC\\Core\\Sharing\\TokenShareRecipientType' => __DIR__ . '/../../..' . '/core/Sharing/TokenShareRecipientType.php',
+        'OC\\Core\\Sharing\\UserShareRecipientType' => __DIR__ . '/../../..' . '/core/Sharing/UserShareRecipientType.php',
         'OC\\DB\\Adapter' => __DIR__ . '/../../..' . '/lib/private/DB/Adapter.php',
         'OC\\DB\\AdapterMySQL' => __DIR__ . '/../../..' . '/lib/private/DB/AdapterMySQL.php',
         'OC\\DB\\AdapterOCI8' => __DIR__ . '/../../..' . '/lib/private/DB/AdapterOCI8.php',

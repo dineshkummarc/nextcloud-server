@@ -211,7 +211,7 @@ interface Node extends FileInfo {
 	/**
 	 * Get the filename of the file or folder
 	 *
-	 * @return string
+	 * @return non-empty-string
 	 * @since 6.0.0
 	 */
 	public function getName();

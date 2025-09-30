@@ -18,7 +18,7 @@ interface ISearch {
 	 * @param bool $lookup
 	 * @param int $limit
 	 * @param int $offset
-	 * @return array with two elements, 1st ISearchResult as array, 2nd a bool indicating whether more result are available
+	 * @return array{array, bool}
 	 * @since 13.0.0
 	 */
 	public function search($search, array $shareTypes, $lookup, $limit, $offset);

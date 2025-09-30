@@ -134,8 +134,8 @@ interface IGroupManager {
 	/**
 	 * Get the display name of a Nextcloud group
 	 *
-	 * @param string $groupId
-	 * @return ?string display name, if any
+	 * @param non-empty-string $groupId
+	 * @return ?non-empty-string display name, if any
 	 *
 	 * @since 26.0.0
 	 */
