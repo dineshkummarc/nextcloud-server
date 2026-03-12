@@ -50,21 +50,25 @@ class PreviewMapperTest extends TestCase {
 		// No preview available
 		$this->assertEquals([42 => []], $this->previewMapper->getAvailablePreviews([42]));
 
-		$this->createPreviewForFileId(42);
+		$previewId = $this->createPreviewForFileId(42);
 		$previews = $this->previewMapper->getAvailablePreviews([42]);
 		$this->assertNotEmpty($previews[42]);
 		$this->assertNull($previews[42][0]->getLocationId());
 		$this->assertNull($previews[42][0]->getBucketName());
 		$this->assertNull($previews[42][0]->getObjectStoreName());
+		# Check that Snowflake ID is preserved, even in 32 bits
+		$this->assertEquals($previews[42][0]->getId(), $previewId);
 
-		$this->createPreviewForFileId(43, 2);
+		$previewId = $this->createPreviewForFileId(43, 2);
 		$previews = $this->previewMapper->getAvailablePreviews([43]);
 		$this->assertNotEmpty($previews[43]);
 		$this->assertEquals('preview-2', $previews[43][0]->getBucketName());
 		$this->assertEquals('default', $previews[43][0]->getObjectStoreName());
+		# Check that Snowflake ID is preserved, even in 32 bits
+		$this->assertEquals($previews[43][0]->getId(), $previewId);
 	}
 
-	private function createPreviewForFileId(int $fileId, ?int $bucket = null): void {
+	private function createPreviewForFileId(int $fileId, ?int $bucket = null): string {
 		$locationId = null;
 		if ($bucket) {
 			$qb = $this->connection->getQueryBuilder();
@@ -95,5 +99,7 @@ class PreviewMapperTest extends TestCase {
 			$preview->setLocationId($locationId);
 		}
 		$this->previewMapper->insert($preview);
+
+		return $preview->id;
 	}
 }
