@@ -151,7 +151,7 @@ class ThemesService {
 	/**
 	 * Get the list of all enabled themes IDs for the current user.
 	 *
-	 * @return string[]
+	 * @return list<string>
 	 */
 	public function getEnabledThemes(): array {
 		$enforcedTheme = $this->config->getSystemValueString('enforce_theme', '');

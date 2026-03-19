@@ -37,6 +37,7 @@ class BeforeTemplateRenderedListener implements IEventListener {
 	public function handle(Event $event): void {
 		$this->initialState->provideLazyInitialState(
 			'data',
+			// @psalm-suppress DeprecatedClass - deprecated since 34
 			fn () => $this->container->get(JSDataService::class),
 		);
 
