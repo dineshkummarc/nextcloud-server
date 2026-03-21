@@ -34,7 +34,9 @@ class DnsPinMiddleware {
 		$top = count($labels) >= 2 ? array_pop($labels) : '';
 		$second = array_pop($labels);
 
-		$hostname = $second . '.' . $top;
+		// Before looking up any DNS record, we need to make sure the
+		// provided target is an FQDN by adding a dot to the end.
+		$hostname = $second . '.' . $top . '.';
 		$responses = $this->dnsGetRecord($hostname, DNS_SOA);
 
 		if ($responses === false || count($responses) === 0) {
@@ -59,6 +61,10 @@ class DnsPinMiddleware {
 		$dnsTypes = \defined('AF_INET6') || @inet_pton('::1')
 			? [DNS_A, DNS_AAAA, DNS_CNAME]
 			: [DNS_A, DNS_CNAME];
+
+		// Before looking up any DNS record, we need to make sure the
+		// provided target is an FQDN by adding a dot to the end.
+		$target = str_ends_with($target, '.') ? $target : "$target.";
 		foreach ($dnsTypes as $dnsType) {
 			if ($canHaveCnameRecord === false && $dnsType === DNS_CNAME) {
 				continue;
